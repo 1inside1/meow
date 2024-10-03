@@ -1,87 +1,168 @@
-.vacancies-container {
-  width: 1440px;
-  margin: 0 auto;
+/* Основной контейнер страницы */
+.vacancies-page {
+  background-color: #fbf8ec;
+  min-height: 100vh;
   padding: 0;
-}
-
-.vacancies-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 40px 20px 20px;
-  width: 100%;
-}
-
-.vacancies-header h2 {
   margin: 0;
-  font-size: 32px;
-  font-weight: bold;
 }
 
-.vacancies-header .back-button {
-  padding: 10px 20px;
-  background-color: #ff6b35;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 14px;
-  font-weight: bold;
+/* Breadcrumbs навигация */
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 24px 116px;
+  font-family: 'Rubik', sans-serif;
+  font-size: 12px;
+  line-height: 1.5;
 }
 
+.breadcrumb-item {
+  color: #8f8f8f;
+}
+
+.breadcrumb-separator {
+  color: #8f8f8f;
+}
+
+.breadcrumb-current {
+  color: #414141;
+  font-weight: 500;
+}
+
+/* Основной контент */
+.vacancies-content {
+  max-width: 1208px;
+  margin: 0 auto;
+  padding: 0 116px 120px;
+}
+
+/* Заголовок страницы */
+.vacancies-title {
+  font-family: 'Rubik', sans-serif;
+  font-weight: bold;
+  font-size: 64px;
+  line-height: 1.5;
+  color: #414141;
+  margin: 0 0 60px 0;
+}
+
+/* Сетка вакансий */
 .vacancies-grid {
   display: grid;
-  grid-template-columns: repeat(3, 376px);
-  gap: 32px;
-  padding: 0 20px;
-  margin-bottom: 60px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  margin-bottom: 40px;
 }
 
+/* Карточка вакансии */
 .vacancy-card {
-  width: 376px;
-  height: 550px;
   background: white;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 20px;
-  box-sizing: border-box;
+  border-radius: 4px;
+  padding: 32px;
+  box-shadow: 1px 2px 2px 0px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
-.vacancy-card h3 {
-  margin: 0 0 16px;
+/* Заголовок вакансии */
+.vacancy-title {
+  font-family: 'Rubik', sans-serif;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 1.5;
+  color: #414141;
+  margin: 0;
+}
+
+/* Секция вакансии */
+.vacancy-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.section-title {
+  font-family: 'Rubik', sans-serif;
+  font-weight: normal;
   font-size: 18px;
-  font-weight: bold;
-  color: #333;
+  line-height: 1.5;
+  color: #414141;
+  margin: 0;
 }
 
-.vacancy-card .subtitle {
-  margin: 0 0 8px;
-  font-size: 14px;
-  font-weight: bold;
-  color: #333;
+.section-text {
+  font-family: 'Rubik', sans-serif;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #414141;
+  margin: 0;
 }
 
-.vacancy-card .text {
-  margin: 0 0 16px;
-  font-size: 14px;
-  color: #666;
-  line-height: 1.6;
+/* Контактная информация */
+.vacancy-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
-.vacancy-card .phone {
+.contact-title {
+  font-family: 'Rubik', sans-serif;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 1.5;
+  color: #414141;
+  margin: 0;
+}
+
+.contact-phone {
   display: flex;
   align-items: center;
-  margin-top: 24px;
+  gap: 10px;
 }
 
-.vacancy-card .phone img {
+.phone-icon {
   width: 30px;
   height: 30px;
-  margin-right: 8px;
+  flex-shrink: 0;
 }
 
-.vacancy-card .phone span {
-  font-size: 14px;
-  color: #333;
+.phone-number {
+  font-family: 'Rubik', sans-serif;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 1.5;
+  color: #414141;
   text-decoration: underline;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+}
+
+/* Адаптивность */
+@media (max-width: 1200px) {
+  .vacancies-content {
+    padding: 0 20px 120px;
+  }
+  
+  .vacancies-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  .vacancies-title {
+    font-size: 48px;
+  }
+  
+  .vacancies-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  
+  .vacancy-card {
+    padding: 24px;
+  }
 }

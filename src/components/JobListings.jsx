@@ -1,52 +1,63 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
 import '../assets/JobListings.css';
 
 const JobListings = () => {
-  const navigate = useNavigate();
-
   return (
-    <div className="vacancies-container">
-      <div className="vacancies-header">
-        <h2>Вакансии</h2>
-        <button
-          onClick={() => navigate('/')}
-          className="back-button"
-        >
-          На главную
-        </button>
+    <div className="vacancies-page">
+      {/* Breadcrumbs */}
+      <div className="breadcrumbs">
+        <span className="breadcrumb-item">Главная</span>
+        <span className="breadcrumb-separator">></span>
+        <span className="breadcrumb-current">Вакансии</span>
       </div>
 
-      <div className="vacancies-grid">
-        {[...Array(6)].map((_, index) => (
-          <div key={index} className="vacancy-card">
-            <h3>Должность</h3>
-            <div className="subtitle">Требования</div>
-            <div className="text">
-              Текст про требования текст про требования текст про требования текст про требования текст про требования
+      {/* Main Content */}
+      <div className="vacancies-content">
+        <h1 className="vacancies-title">Вакансии</h1>
+        
+        <div className="vacancies-grid">
+          {[...Array(6)].map((_, index) => (
+            <div key={index} className="vacancy-card">
+              <h3 className="vacancy-title">Должность</h3>
+              
+              <div className="vacancy-section">
+                <h4 className="section-title">Требования</h4>
+                <p className="section-text">
+                  Текст про требования текст про требования текст про требования текст про требования текст про требования
+                </p>
+              </div>
+              
+              <div className="vacancy-section">
+                <h4 className="section-title">Обязанности</h4>
+                <p className="section-text">
+                  Текст про обязанности текст про обязанности текст про обязанности текст про обязанности текст про обязанности
+                </p>
+              </div>
+              
+              <div className="vacancy-section">
+                <h4 className="section-title">Условия</h4>
+                <p className="section-text">
+                  Текст про условия текст про условия текст про условия текст про условия текст про условия текст про условия
+                </p>
+              </div>
+              
+              <div className="vacancy-contact">
+                <h4 className="contact-title">Звоните</h4>
+                <div className="contact-phone">
+                  <img
+                    src='/images/ui/phone.png'
+                    alt="Телефон"
+                    className="phone-icon"
+                  />
+                  <span className="phone-number">+7 904 271 35 90</span>
+                </div>
+              </div>
             </div>
-            <div className="subtitle">Обязанности</div>
-            <div className="text">
-              Текст про обязанности текст про обязанности текст про обязанности текст про обязанности текст про обязанности
-            </div>
-            <div className="subtitle">Условия</div>
-            <div className="text">
-              Текст про условия текст про условия текст про условия текст про условия текст про условия
-            </div>
-            <div className="subtitle">Звоните</div>
-            <div className="phone">
-              <img
-                src='/images/ui/phone.png'
-                alt="Телефон"
-              />
-              <span>+7 904 271 35 90</span>
-            </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   );
 };
-
 
 export default JobListings;

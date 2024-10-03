@@ -1,6 +1,6 @@
 // Общий бэкап проекта - все компоненты готовы
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useNavigate, useLocation } from 'react-router-dom';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import SpecialOffers from './components/SpecialOffers';
@@ -449,11 +449,12 @@ const AllBuyAgoPage = () => {
   );
 };
 
-function App() {
+function AppContent() {
   const [searchQuery, setSearchQuery] = useState('');
   const [searchHistory, setSearchHistory] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState(null);
   const [favorites, setFavorites] = useState([]);
+  const location = useLocation();
 
   //Все товары
   const allProducts = [
@@ -560,20 +561,20 @@ function App() {
   };
 
   return (
-    <Router>
-      <div className="App">
-        <Header
-          searchQuery={searchQuery}
-          setSearchQuery={setSearchQuery}
-          searchHistory={searchHistory}
-          onSearch={handleSearch}
-          favorites={favorites}
-          toggleFavorite={toggleFavorite}
-          isFavorite={isFavorite}
-        />
-        <Hero />
+    <div className="App">
+      <Header
+        searchQuery={searchQuery}
+        setSearchQuery={setSearchQuery}
+        searchHistory={searchHistory}
+        onSearch={handleSearch}
+        favorites={favorites}
+        toggleFavorite={toggleFavorite}
+        isFavorite={isFavorite}
+      />
+      {/* Скрываем баннер на страницах вакансий и контактов */}
+      {location.pathname !== '/vacancies' && location.pathname !== '/contacts' && <Hero />}
 
-        <Routes>
+      <Routes>
           <Route
             path="/"
             element={
@@ -647,6 +648,13 @@ function App() {
 
         <Footer />
       </div>
+  );
+}
+
+function App() {
+  return (
+    <Router>
+      <AppContent />
     </Router>
   );
 }

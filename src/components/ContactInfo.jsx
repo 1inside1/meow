@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import '../assets/ContactInfo.css';
 
 const ContactInfo = () => {
-  const navigate = useNavigate();
   const [activeStore, setActiveStore] = useState('Щельяюр');
 
   const stores = [
@@ -17,12 +15,6 @@ const ContactInfo = () => {
     <div className="contacts-container">
       <div className="contacts-header">
         <h1>Контакты</h1>
-        <button
-          onClick={() => navigate('/')}
-          className="back-button"
-        >
-          На главную
-        </button>
       </div>
 
       <div className="contact-info">
