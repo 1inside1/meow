@@ -1,0 +1,100 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  padding: 24px;
+  border-radius: 8px;
+  width: 420px;
+  height: 431px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  position: relative;
+  text-align: center;
+}
+
+.close-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #333;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  text-align: left;
+  width: 100%;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #333;
+  text-align: left;
+  margin-left: 80px;
+}
+
+.form-group input[type="file"],
+.form-group input[type="tel"],
+.form-group input[type="text"] {
+  width: 260px;
+  height: 40px;
+  padding: 8px 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  margin: 0 auto;
+  display: block;
+  overflow: hidden;
+  text-align: left;
+  box-sizing: border-box;
+}
+
+.submit-btn {
+  width: 260px;
+  height: 40px;
+  padding: 12px;
+  background: #ff6b35;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 0 auto; 
+  display: block;
+}
+
+.bottom-links {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.reg-btn, .forgot-btn {
+  padding: 4px;
+  background: transparent;
+  border: 1px solid #ddd;
+  color: #333;
+  cursor: pointer;
+  font-size: 14px;
+  border-radius: 4px;
+  width: auto;
+}
