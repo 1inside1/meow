@@ -1,0 +1,19 @@
+.special-offer {
+  width: 584px;
+  height: 200px;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.special-offer img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.special-offer:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
