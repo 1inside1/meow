@@ -1,0 +1,58 @@
+.our-stores-section {
+  width: 1440px;
+  margin: 0 auto;
+  padding: 32px 0;
+  background-color: #f9f7f3;
+}
+
+.our-stores-section h2 {
+  font-size: 32px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 24px;
+  margin-left: 125px;
+}
+
+.map-filter-container {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 24px;
+  padding-left: 0;
+  margin-left: 125px;
+}
+
+.map-filter {
+  display: flex;
+  gap: 8px;
+  padding-left: 0;
+}
+
+.filter-btn {
+  padding: 8px 16px;
+  border: 1px solid #ddd;
+  background-color: white;
+  color: #333;
+  font-size: 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.filter-btn:hover {
+  background-color: #e8f5e8;
+}
+
+.filter-btn.active {
+  background-color: #4caf50;
+  color: white;
+  border-color: #4caf50;
+}
+
+.map-image {
+  width: 1208px;
+  height: 354px;
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+  margin: 0 auto; 
+}
