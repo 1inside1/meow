@@ -1,0 +1,161 @@
+/* src/components/OrdersPage.css */
+
+.orders-container {
+  width: 1440px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.orders-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 20px 20px;
+  width: 100%;
+}
+
+.orders-header h1 {
+  margin: 0;
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.orders-header .back-button {
+  padding: 10px 20px;
+  background-color: #ff6b35;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.date-filters {
+  display: flex;
+  gap: 8px;
+  padding: 20px;
+  margin-bottom: 24px;
+}
+
+.date-btn {
+  padding: 8px 16px;
+  background-color: #f9f7f3;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.date-btn.active {
+  background-color: #4caf50;
+  color: white;
+  border-color: #4caf50;
+}
+
+.time-section {
+  margin-bottom: 32px;
+}
+
+.time-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.time-header span {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.location-tags {
+  display: flex;
+  gap: 8px;
+  margin: 16px 0;
+}
+
+.location-tag {
+  padding: 4px 8px;
+  background-color: #4caf50;
+  color: white;
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+.orders-list {
+  margin-top: 16px;
+}
+
+.order-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.order-info {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.order-id {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+.customer-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.customer-info img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.customer-info span {
+  font-size: 14px;
+  color: #333;
+}
+
+.phone {
+  font-size: 14px;
+  color: #666;
+}
+
+.order-status {
+  min-width: 150px;
+}
+
+.order-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.view-order-btn {
+  padding: 4px 8px;
+  background-color: #f9f7f3;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #333;
+}
+
+.chat-btn {
+  padding: 4px 8px;
+  background-color: #f9f7f3;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #333;
+}
