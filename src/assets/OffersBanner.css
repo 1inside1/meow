@@ -1,0 +1,20 @@
+.special-offers-section {
+  width: 1440px;
+  margin: 0 auto; 
+  padding: 32px 0;
+  background-color: #f9f7f3;
+}
+
+.special-offers-section h2 {
+  font-size: 32px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 24px;
+  margin-left: 125px;
+}
+
+.offers-container {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+}
