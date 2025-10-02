@@ -1,3 +1,4 @@
+// Главный баннер - обновлен в общем бэкапе
 import React from 'react';
 import '../assets/Hero.css'
 const heroBg = '/images/ui/hero-bg1.png'; 

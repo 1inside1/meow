@@ -1,3 +1,4 @@
+// Компонент шапки сайта - обновлен в общем бэкапе
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import '../assets/styles.css';

@@ -1,3 +1,4 @@
+// Общий бэкап проекта - все компоненты готовы
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
 import Header from './components/Header';
