@@ -1,100 +1,446 @@
+/* iOS-стиль авторизации с сохранением Figma макета */
 .modal-overlay {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 1000;
+  animation: fadeIn 0.3s ease-out;
 }
 
-.modal-content {
-  background: white;
-  padding: 24px;
-  border-radius: 8px;
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.auth-modal {
+  background: #FFFFFF;
+  border-radius: 16px;
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.15),
+    0 8px 16px rgba(0, 0, 0, 0.1),
+    0 0 0 1px rgba(255, 255, 255, 0.1);
   width: 420px;
-  height: 431px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  min-height: 431px;
   position: relative;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  animation: slideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+}
+
+@keyframes slideUp {
+  from { 
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
 
 .close-btn {
   position: absolute;
-  top: 12px;
-  right: 12px;
-  width: 40px;
-  height: 40px;
-  background: none;
+  top: 16px;
+  right: 16px;
+  width: 32px;
+  height: 32px;
+  background: rgba(0, 0, 0, 0.05);
   border: none;
-  font-size: 24px;
+  border-radius: 50%;
   cursor: pointer;
-  color: #333;
-}
-
-.form-group {
-  margin-bottom: 20px;
-  text-align: left;
-  width: 100%;
-}
-
-.form-group label {
-  display: block;
-  margin-bottom: 8px;
-  font-size: 14px;
-  color: #333;
-  text-align: left;
-  margin-left: 80px;
-}
-
-.form-group input[type="file"],
-.form-group input[type="tel"],
-.form-group input[type="text"] {
-  width: 260px;
-  height: 40px;
-  padding: 8px 10px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  font-size: 14px;
-  margin: 0 auto;
-  display: block;
-  overflow: hidden;
-  text-align: left;
-  box-sizing: border-box;
-}
-
-.submit-btn {
-  width: 260px;
-  height: 40px;
-  padding: 12px;
-  background: #ff6b35;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 16px;
-  margin: 0 auto; 
-  display: block;
-}
-
-.bottom-links {
   display: flex;
-  gap: 8px;
+  align-items: center;
   justify-content: center;
-  margin-top: 20px;
+  z-index: 10;
+  transition: all 0.2s ease;
+  backdrop-filter: blur(10px);
+}
+
+.close-btn:hover {
+  background: rgba(0, 0, 0, 0.1);
+  transform: scale(1.1);
+}
+
+.close-btn:active {
+  transform: scale(0.95);
+}
+
+.close-icon {
+  width: 16px;
+  height: 16px;
+  opacity: 0.6;
+  transition: opacity 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.close-icon svg {
+  width: 100%;
+  height: 100%;
+  stroke: #414141;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.close-btn:hover .close-icon {
+  opacity: 1;
+}
+
+.close-btn:hover .close-icon svg {
+  stroke: #1d1d1f;
+}
+
+.auth-content {
+  padding: 48px 80px 40px 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  align-items: center;
+  flex: 1;
+}
+
+.auth-title {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 1.2;
+  color: #1d1d1f;
+  margin: 0;
+  text-align: center;
+  width: 260px;
+  letter-spacing: -0.5px;
+}
+
+.phone-field {
+  width: 260px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.phone-label {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.3;
+  color: #6e6e73;
+  margin-bottom: 4px;
+}
+
+.phone-input-container {
+  background: #f5f5f7;
+  border: 2px solid transparent;
+  border-radius: 12px;
+  height: 56px;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.phone-input-container:focus-within {
+  background: #ffffff;
+  border-color: #007AFF;
+  box-shadow: 0 0 0 4px rgba(0, 122, 255, 0.1);
+}
+
+.phone-prefix {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.2;
+  color: #1d1d1f;
+  white-space: nowrap;
+}
+
+.phone-input {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.2;
+  color: #1d1d1f;
+  border: none;
+  outline: none;
+  background: transparent;
+  flex: 1;
+  min-width: 0;
+}
+
+.phone-input::placeholder {
+  color: #8e8e93;
+  font-weight: 400;
+}
+
+.login-btn {
+  background: linear-gradient(135deg, #FF6B35 0%, #FF8E53 100%);
+  border: none;
+  border-radius: 12px;
+  width: 260px;
+  height: 56px;
+  padding: 0 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 1.2;
+  color: #ffffff;
+  text-align: center;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
+  letter-spacing: -0.2px;
+}
+
+.login-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(255, 107, 53, 0.4);
+}
+
+.login-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(255, 107, 53, 0.3);
+}
+
+.auth-buttons {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+  width: 260px;
+}
+
+.register-btn {
+  border: 2px solid #70C05B;
+  background: transparent;
+  border-radius: 10px;
+  width: 121px;
+  height: 40px;
+  padding: 0 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.2;
+  color: #70C05B;
+  text-align: center;
+  transition: all 0.2s ease;
+  letter-spacing: -0.1px;
+}
+
+.register-btn:hover {
+  background: rgba(112, 192, 91, 0.05);
+  transform: translateY(-1px);
+}
+
+.register-btn:active {
+  transform: translateY(0);
+  background: rgba(112, 192, 91, 0.1);
+}
+
+.forgot-btn {
+  background: transparent;
+  border: none;
+  border-radius: 10px;
+  flex: 1;
+  height: 40px;
+  padding: 0 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.2;
+  color: #8e8e93;
+  text-align: center;
+  transition: all 0.2s ease;
+  letter-spacing: -0.1px;
+}
+
+.forgot-btn:hover {
+  background: rgba(0, 0, 0, 0.05);
+  color: #1d1d1f;
+}
+
+/* iOS-стиль для полей регистрации */
+.name-field {
+  width: 260px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.name-label {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.3;
+  color: #6e6e73;
+  margin-bottom: 4px;
+}
+
+.name-input {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.2;
+  color: #1d1d1f;
+  border: 2px solid transparent;
+  border-radius: 12px;
+  height: 56px;
+  padding: 0 16px;
+  background: #f5f5f7;
+  outline: none;
+  width: 100%;
+  box-sizing: border-box;
+  transition: all 0.2s ease;
+}
+
+.name-input:focus {
+  background: #ffffff;
+  border-color: #007AFF;
+  box-shadow: 0 0 0 4px rgba(0, 122, 255, 0.1);
+}
+
+.name-input::placeholder {
+  color: #8e8e93;
+  font-weight: 400;
+}
+
+.photo-field {
+  width: 260px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.photo-label {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.3;
+  color: #6e6e73;
+  margin-bottom: 4px;
+}
+
+.photo-upload-container {
+  position: relative;
   width: 100%;
 }
 
-.reg-btn, .forgot-btn {
-  padding: 4px;
-  background: transparent;
-  border: 1px solid #ddd;
-  color: #333;
+.photo-input {
+  position: absolute;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
   cursor: pointer;
-  font-size: 14px;
-  border-radius: 4px;
-  width: auto;
+  z-index: 2;
+}
+
+.photo-upload-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 56px;
+  background: #f5f5f7;
+  border: 2px solid transparent;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.2;
+  color: #007AFF;
+}
+
+.photo-upload-label:hover {
+  background: #ffffff;
+  border-color: #007AFF;
+}
+
+.photo-placeholder, .photo-selected {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.photo-icon {
+  font-size: 18px;
+}
+
+.photo-text {
+  font-weight: 500;
+}
+
+.photo-selected {
+  color: #70C05B;
+}
+
+.photo-selected .photo-icon {
+  color: #70C05B;
+}
+
+.photo-preview {
+  margin-top: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.preview-image {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #70C05B;
+  box-shadow: 0 4px 12px rgba(112, 192, 91, 0.2);
+}
+
+.remove-photo-btn {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #ff3b30;
+  border: none;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(255, 59, 48, 0.3);
+}
+
+.remove-photo-btn:hover {
+  background: #ff2d55;
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(255, 59, 48, 0.4);
+}
+
+.remove-photo-btn:active {
+  transform: scale(0.95);
 }
