@@ -2,138 +2,195 @@
   width: 1440px;
   margin: 0 auto;
   padding: 0;
+  font-family: 'Rubik', sans-serif;
 }
 
 .contacts-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 40px 20px 20px;
+  padding: 40px 116px 20px;
   width: 100%;
 }
 
-.contacts-header h2 {
+.contacts-header h1 {
   margin: 0;
-  font-size: 32px;
-  font-weight: bold;
+  font-size: 64px;
+  font-weight: 700;
+  color: #414141;
+  line-height: 1.5;
 }
 
 .contacts-header .back-button {
-  padding: 10px 20px;
+  padding: 8px 16px;
   background-color: #ff6b35;
   color: white;
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  font-size: 14px;
-  font-weight: bold;
+  font-size: 16px;
+  font-weight: 400;
+  font-family: 'Rubik', sans-serif;
+  transition: background-color 0.2s ease;
+}
+
+.contacts-header .back-button:hover {
+  background-color: #e55a2b;
 }
 
 .contact-info {
   display: flex;
-  gap: 40px;
-  padding: 0 20px; 
-  margin-bottom: 60px;
-  margin-top: 30px;
+  gap: 80px;
+  padding: 0 116px;
+  margin-bottom: 40px;
+  margin-top: 40px;
 }
 
 .contact-item {
-  flex: 1;
-  text-align: left;
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
 }
 
-.contact-item img {
+.contact-icon {
+  flex-shrink: 0;
   width: 30px;
   height: 30px;
-  margin-right: 8px;
-  vertical-align: middle;
 }
 
-.contact-item p {
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.contact-details h3 {
   margin: 0;
-  font-size: 16px;
-  line-height: 1.6;
+  font-size: 24px;
+  font-weight: 400;
+  color: #414141;
+  line-height: 1.5;
 }
 
-.contact-item .phone {
-  font-size: 18px;
-  font-weight: bold;
+.phone-link {
+  font-size: 24px;
+  font-weight: 700;
+  color: #414141;
   text-decoration: underline;
-  color: #333;
+  line-height: 1.5;
+  transition: color 0.2s ease;
 }
 
-.store-title {
-  font-size: 20px;
-  font-weight: bold;
-  margin: 16px 0 8px;
-  color: #333;
-  padding-left: 20px; 
+.phone-link:hover {
+  color: #70C05B;
+}
+
+.stores-section {
+  padding: 0 116px;
+  margin-bottom: 40px;
+}
+
+.stores-section h2 {
+  font-size: 36px;
+  font-weight: 700;
+  color: #414141;
+  margin: 0 0 40px 0;
+  line-height: 1.5;
 }
 
 .store-tabs {
   display: flex;
-  gap: 12px;
-  margin-bottom: 24px;
-  padding: 0 20px; 
-  margin-top: 30px;
+  gap: 24px;
+  margin-bottom: 32px;
 }
 
 .store-tab {
   padding: 8px 16px;
-  background: #f9f7f3;
-  border: 1px solid #ddd;
+  background: #f3f2f1;
+  border: none;
   border-radius: 4px;
   cursor: pointer;
-  font-size: 14px;
+  font-size: 16px;
+  font-weight: 400;
+  color: #606060;
+  font-family: 'Rubik', sans-serif;
+  transition: all 0.2s ease;
+}
+
+.store-tab:hover {
+  background: #e5e5e5;
 }
 
 .store-tab.active {
-  background: #4caf50;
+  background: #70C05B;
   color: white;
 }
 
 .store-list {
   display: flex;
-  gap: 32px;
-  padding: 0 20px; 
-  margin-bottom: 40px;
+  gap: 80px;
+  margin-bottom: 32px;
 }
 
 .store-item {
-  flex: 1;
-  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-start;
 }
 
-.store-item h3 {
-  margin: 0 0 8px;
-  font-size: 20px;
-  font-weight: bold;
-  color: #333;
+.store-logo {
+  margin-bottom: 8px;
 }
 
-.store-item .address {
-  margin: 0;
-  font-size: 16px;
-  line-height: 1.6;
+.store-logo img {
+  width: 146px;
+  height: 20px;
+  object-fit: contain;
 }
 
-.store-item .phone {
-  margin: 0;
-  font-size: 16px;
-  font-weight: bold;
+.store-address,
+.store-phone {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  font-size: 18px;
+  font-weight: 400;
+  color: #414141;
+  line-height: 1.5;
+}
+
+.store-address svg,
+.store-phone svg {
+  flex-shrink: 0;
+  width: 30px;
+  height: 30px;
+}
+
+.store-phone .phone-link {
+  font-size: 18px;
+  font-weight: 400;
+  color: #414141;
   text-decoration: underline;
-  color: #333;
+  line-height: 1.5;
+  transition: color 0.2s ease;
 }
 
-.map {
+.store-phone .phone-link:hover {
+  color: #70C05B;
+}
+
+.map-container {
   width: 1208px;
   height: 354px;
   margin: 0 auto;
-  background: #f9f7f3;
-  margin-bottom: 60px;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 1px 2px 2px 0px rgba(0, 0, 0, 0.1);
 }
 
-.address img {
-    width: 30px;
-    height: 30px;
+.map-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
