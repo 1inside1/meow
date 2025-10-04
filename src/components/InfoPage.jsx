@@ -1,76 +1,82 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
 import './InfoPage.css';
 
 const InfoPage = () => {
-  const navigate = useNavigate();
-
   return (
     <div className="about-container">
-      <div className="about-header">
-        <h2>О компании</h2>
-        <button
-          onClick={() => navigate('/')}
-          className="back-button"
-        >
-          На главную
-        </button>
+      {/* Breadcrumbs */}
+      <div className="breadcrumbs">
+        <span className="breadcrumb-item">Главная</span>
+        <span className="breadcrumb-separator">›</span>
+        <span className="breadcrumb-current">О компании</span>
       </div>
 
-      <div className="text-and-image">
-        <div className="text-content">
-          <p className="highlight">
-            Мы непрерывно развиваемся и работаем над совершенствованием сервиса, заботимся о наших клиентах, стремимся к лучшему будущему.
+      {/* Header Section - Full Width */}
+      <div className="about-header-section">
+        <div className="about-text-content">
+          <h1 className="about-title">О компании</h1>
+          
+          <p className="about-description">
+            Мы непрерывно развиваемся и<br />
+            работаем над совершенствованием сервиса, заботимся о наших клиентах,<br />
+            стремимся к лучшему будущему.
           </p>
         </div>
-        <div className="image-content">
-          <img
-            src={require('./team.png')}
-            alt="Команда"
-          />
-          <div className="underline"></div>
-        </div>
       </div>
 
-      <div className="benefits">
-        <div className="benefit">
-          <div className="icon">
-            <svg viewBox="0 0 24 24">
-              <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z" />
-            </svg>
-          </div>
-          <p>Мы занимаемся розничной торговлей</p>
-          <p>Более 20 лет.</p>
-        </div>
-        <div className="benefit">
-          <div className="icon">
-            <svg viewBox="0 0 24 24">
-              <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z" />
-            </svg>
-          </div>
-          <p>Основная миссия компании</p>
-          <p>Максимальное качество товаров и услуг по доступной цене.</p>
-        </div>
-        <div className="benefit">
-          <div className="icon">
-            <svg viewBox="0 0 24 24">
-              <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z" />
-            </svg>
-          </div>
-          <p>Отличительная черта нашей сети</p>
-          <p>Здоровая и полезная продукция местного производства в наших магазинах.</p>
-        </div>
-      </div>
+      {/* Main Content */}
+      <div className="about-content">
 
-     <div className="logo-and-text">
-        <div className="logo">
-          <img
-            src={require('./aboutCompanyLogo.png')}
-            alt="Логотип"
-          />
+        <div className="benefits">
+          <div className="benefit">
+            <div className="benefit-icon">
+              <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
+                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z" fill="#FF6633" />
+              </svg>
+            </div>
+            <div className="benefit-content">
+              <p className="benefit-title">Мы занимаемся розничной торговлей</p>
+              <p className="benefit-description">Более 20 лет.</p>
+            </div>
+          </div>
+          
+          <div className="benefit">
+            <div className="benefit-icon">
+              <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
+                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z" fill="#FF6633" />
+              </svg>
+            </div>
+            <div className="benefit-content">
+              <p className="benefit-title">Основная миссия компании</p>
+              <p className="benefit-description">Максимальное качество товаров и услуг по доступной цене.</p>
+            </div>
+          </div>
+          
+          <div className="benefit">
+            <div className="benefit-icon">
+              <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
+                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z" fill="#FF6633" />
+              </svg>
+            </div>
+            <div className="benefit-content">
+              <p className="benefit-title">Отличительная черта нашей сети</p>
+              <p className="benefit-description">Здоровая и полезная продукция местного производства в наших магазинах.</p>
+            </div>
+          </div>
         </div>
-        <div className="message">
-          Спасибо за то, что вы с нами. Северяночка, везет всегда!
+
+        <div className="logo-and-message">
+          <div className="company-logo">
+            <img
+              src="/images/ui/logo.png"
+              alt="Логотип Северяночка"
+            />
+          </div>
+          <div className="message-box">
+            <p className="message-text">
+              Спасибо за то, что вы с нами. Северяночка, везет всегда!
+            </p>
+          </div>
         </div>
       </div>
     </div>

@@ -571,8 +571,8 @@ function AppContent() {
         toggleFavorite={toggleFavorite}
         isFavorite={isFavorite}
       />
-      {/* Скрываем баннер на страницах вакансий и контактов */}
-      {location.pathname !== '/vacancies' && location.pathname !== '/contacts' && <Hero />}
+      {/* Скрываем баннер на страницах вакансий, контактов и о компании */}
+      {location.pathname !== '/vacancies' && location.pathname !== '/contacts' && location.pathname !== '/about' && <Hero />}
 
       <Routes>
           <Route

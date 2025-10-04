@@ -1,145 +1,235 @@
+/* Основной контейнер страницы */
 .about-container {
-  width: 1440px;
-  margin: 0 auto;
+  background-color: #fbf8ec;
+  min-height: 100vh;
   padding: 0;
-}
-
-.about-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 40px 20px 20px;
-  width: 100%;
-}
-
-.about-header h2 {
   margin: 0;
-  font-size: 32px;
-  font-weight: bold;
 }
 
-.about-header .back-button {
-  padding: 10px 20px;
-  background-color: #ff6b35;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 14px;
-  font-weight: bold;
-}
-
-.text-and-image {
+/* Breadcrumbs навигация */
+.breadcrumbs {
   display: flex;
-  gap: 60px;
+  align-items: center;
+  gap: 8px;
+  padding: 24px 116px;
+  font-family: 'Rubik', sans-serif;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.breadcrumb-item {
+  color: #8f8f8f;
+}
+
+.breadcrumb-separator {
+  color: #8f8f8f;
+}
+
+.breadcrumb-current {
+  color: #414141;
+  font-weight: 500;
+}
+
+/* Основной контент */
+.about-content {
+  max-width: 1208px;
+  margin: 0 auto;
+  padding: 0 116px 120px;
+}
+
+/* Секция заголовка с фоновым изображением */
+.about-header-section {
+  position: relative;
+  margin: 0 0 60px 0;
+  min-height: 500px;
+  width: 100%;
+  display: flex;
   align-items: flex-start;
-  margin-bottom: 60px;
-  padding: 0 20px;
+  background-image: url('../../public/images/ui/back-aboutus.png');
+  background-position: right center;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
-.text-and-image .text-content {
+/* Контейнер для текста */
+.about-text-content {
+  position: relative;
+  z-index: 2;
+  padding: 20px 0 20px 116px;
+  max-width: 669px;
   flex: 1;
+  margin: 0 auto;
+  max-width: 1208px;
 }
 
-.text-and-image .text-content .highlight {
-  color: #ff6b35;
-  font-size: 18px;
-  line-height: 1.6;
-  margin-bottom: 20px;
+/* Заголовок страницы */
+.about-title {
+  font-family: 'Rubik', sans-serif;
+  font-weight: bold;
+  font-size: 64px;
+  line-height: 1.5;
+  color: #414141;
+  margin: 0 0 16px 0;
 }
 
-.text-and-image .image-content {
-  flex: 1;
-  text-align: center;
+/* Описание компании */
+.about-description {
+  font-family: 'Rubik', sans-serif;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 1.5;
+  color: #FF6633;
+  margin: 0;
+  max-width: 669px;
 }
 
-.text-and-image .image-content img {
-  width: 100%;
-  height: auto;
-  max-width: 400px;
-}
-
-.text-and-image .image-content .underline {
-  width: 100%;
-  height: 2px;
-  background-color: #ddd;
-  margin-top: 16px;
-}
-
+/* Секция преимуществ */
 .benefits {
   display: flex;
+  justify-content: space-between;
+  margin-bottom: 60px;
+  gap: 75px;
+}
+
+.benefit {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  flex: 1;
+  max-width: 445px;
+}
+
+.benefit-icon {
+  flex-shrink: 0;
+  width: 30px;
+  height: 30px;
+}
+
+.benefit-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.benefit-title {
+  font-family: 'Rubik', sans-serif;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 1.5;
+  color: #414141;
+  margin: 0;
+}
+
+.benefit-description {
+  font-family: 'Rubik', sans-serif;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 1.5;
+  color: #414141;
+  margin: 0;
+}
+
+/* Секция с логотипом и сообщением */
+.logo-and-message {
+  display: flex;
+  align-items: center;
   gap: 40px;
   justify-content: center;
-  margin-bottom: 60px;
-  padding: 0 20px;
+  margin: 0 auto;
+  max-width: 1012px;
 }
 
-.benefits .benefit {
+.company-logo {
+  width: 127px;
+  height: 103px;
+  flex-shrink: 0;
+}
+
+.company-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.message-box {
+  background-color: #E5FFDE;
+  padding: 30px 40px;
+  border-radius: 16px;
   flex: 1;
-  text-align: left;
+  max-width: 845px;
+  position: relative;
 }
 
-.benefits .benefit .icon {
-  display: inline-block;
-  margin-right: 8px;
-  vertical-align: middle;
-}
-
-.benefits .benefit .icon svg {
-  width: 24px;
-  height: 24px;
-  fill: #ff6b35;
-}
-
-.benefits .benefit p {
-  margin: 8px 0;
-  line-height: 1.6;
-  font-weight: normal;
-}
-
-.benefits .benefit p:nth-child(2) {
-  font-size: 16px;
-}
-
-.benefits .benefit p:nth-child(3) {
-  font-size: 18px;
+.message-text {
+  font-family: 'Rubik', sans-serif;
   font-weight: bold;
-  color: #333;
-}
-
-.logo-and-text {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 30px;
-  padding: 0 20px;
-  margin-bottom: 60px;
-}
-
-.logo-and-text .logo {
-  width: 100px;
-  height: 100px;
-  background: #fff;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.logo-and-text .logo svg {
-  width: 64px;
-  height: 64px;
-  fill: #ff6b35;
-}
-
-.logo-and-text .message {
-  background: #e8f5e8;
-  padding: 20px 40px;
-  border-radius: 8px;
-  font-size: 18px;
-  color: #333;
-  font-weight: bold;
-  max-width: 600px;
+  font-size: 24px;
+  line-height: 1.5;
+  color: #70C05B;
+  margin: 0;
   text-align: center;
+}
 
+/* Адаптивность */
+@media (max-width: 1200px) {
+  .about-content {
+    padding: 0 20px 120px;
+  }
+  
+  .breadcrumbs {
+    padding: 24px 20px;
+  }
+  
+  .about-header-section {
+    height: 300px;
+  }
+  
+  .about-background-image {
+    width: 50%;
+    height: 280px;
+  }
+  
+  .benefits {
+    flex-direction: column;
+    gap: 40px;
+  }
+  
+  .logo-and-message {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-title {
+    font-size: 48px;
+  }
+  
+  .about-description {
+    font-size: 20px;
+  }
+  
+  .about-header-section {
+    height: auto;
+  }
+  
+  .about-background-image {
+    position: static;
+    width: 100%;
+    height: 250px;
+    margin-top: 20px;
+  }
+  
+  .benefit-title {
+    font-size: 18px;
+  }
+  
+  .benefit-description {
+    font-size: 20px;
+  }
+  
+  .message-text {
+    font-size: 20px;
+  }
 }
